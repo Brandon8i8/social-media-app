@@ -10,7 +10,9 @@ function App() {
 
         {/* Feed */}
 
-        <Post/>
+        <Post content="This is a test post!"/>
+        <br/>
+        <Post content="This is another test post!"/>
 
     </div>
   )
