@@ -1,12 +1,14 @@
 import React from 'react';
 import Post from './Post';
 
-function Feed() {
+function Feed(props) {
+  let renderPosts = () => {
+    return (props.posts.map((data) => {
+      return <Post user={data.user} content={data.content} date={data.date} />
+    }))
+  }
   return (
-    <div>
-      <Post user="Brandon" content="This is a test post" date="03/28/2024"/>
-      <Post content="Another test post"/>
-    </div>
+    <div>{renderPosts()}</div>
   )
 }
 

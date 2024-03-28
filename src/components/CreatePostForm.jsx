@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function CreatePostForm() {
+function CreatePostForm(props) {
   const [user, setUser] = useState("");
   const [content, setContent] = useState("");
   const [date, setDate] = useState("mm/dd/yyyy");
@@ -16,6 +16,9 @@ function CreatePostForm() {
   }
 
   let handleSubmit = (event) => {
+    event.preventDefault();
+    props.onNewSubmission({user, content, date});
+    
     setUser("");
     setContent("");
     setDate("mm/dd/yyyy");
