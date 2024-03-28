@@ -9,7 +9,7 @@ function Post(props) {
   }
 
   return (
-    <div>
+    <div className="post-container">
       <h3>{props.content}</h3>
       <p>Likes: {likes}</p>
       <button onClick={handleLikes}>Like</button>
