@@ -1,5 +1,7 @@
 import React from 'react';
 import Post from './components/Post';
+import CreatePostForm from './components/CreatePostForm';
+
 import './App.css';
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
       <h1>Facebook!</h1>
 
         {/* CreatePostForm */}
+        <CreatePostForm />
 
         {/* Feed */}
 
