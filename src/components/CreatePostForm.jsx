@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 function CreatePostForm(props) {
   const [user, setUser] = useState("");
   const [content, setContent] = useState("");
-  const [date, setDate] = useState("mm/dd/yyyy");
 
   let handleUserChange = (event) => {
     setUser(event.target.value);
@@ -11,29 +10,23 @@ function CreatePostForm(props) {
   let handleContentChange = (event) => {
     setContent(event.target.value);
   }
-  let handleDateChange = (event) => {
-    setDate(event.target.value);
-  }
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    props.onNewSubmission({user, content, date});
-    
+    props.onNewSubmission({user, content});
+
     setUser("");
     setContent("");
-    setDate("mm/dd/yyyy");
   }
 
   return (
-    <div>
-      <h2>Create Post</h2>
+    <div className="post-form">
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Name" onChange={handleUserChange} value={user}></input>
         <br/>
         <textarea placeholder="Type your thoughts..." onChange={handleContentChange} value={content}></textarea>
         <br/>
-        <input type="date" onChange={handleDateChange} value={date}></input>
-        <button type="submit" disabled={user=="" || content=="" || date=="mm/dd/yyyy"}>Post</button>
+        <button type="submit" disabled={user=="" || content==""}>Post</button>
       </form>
     </div>
   )
