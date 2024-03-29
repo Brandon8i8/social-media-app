@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Comment from './Comment';
+import CommentFeed from './CommentFeed';
 
 function Post(props) {
   const [likes, setLikes] = useState(0);
@@ -17,9 +18,7 @@ function Post(props) {
       <button onClick={handleLikes}>Like: {likes}</button>
 
       <h4>Comments:</h4>
-      <Comment content="This is the test comment!"/>
-      <Comment content="This is another test comment!"/>
-      <Comment content="This is yet another test comment!"/>
+      <CommentFeed />
     </div>
   )
 }

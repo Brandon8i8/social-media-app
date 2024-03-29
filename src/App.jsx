@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <h1>Facebook!</h1>
+      <h1>Z</h1>
         <CreatePostForm onNewSubmission={handleNewSubmission}/>
         <Feed posts={feed}/>
     </div>
